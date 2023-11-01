@@ -14,7 +14,6 @@ namespace AppTransaction.Domain
         public string Identification { get; set; }
         public string Name { get; set; }
         public double AvailableBalance { get; set; }
-
         [JsonIgnore]
         public  ICollection<Order> Orders { get; set; } = new List<Order>();
     }

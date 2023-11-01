@@ -4,12 +4,12 @@
     "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Infraestruture.Datos\\AppTransaction.Infraestruture.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj": {
+    "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj",
-        "projectName": "AppTransaction.Dominio",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj",
+        "projectName": "AppTransaction.Domain",
+        "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\obj\\",
         "projectStyle": "PackageReference",
@@ -109,8 +109,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj"
+              "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj": {
+                "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj"
               },
               "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppVenta.Aplication\\AppTransaction.Aplication.csproj": {
                 "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppVenta.Aplication\\AppTransaction.Aplication.csproj"
@@ -211,8 +211,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj"
+              "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj": {
+                "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj"
               }
             }
           }

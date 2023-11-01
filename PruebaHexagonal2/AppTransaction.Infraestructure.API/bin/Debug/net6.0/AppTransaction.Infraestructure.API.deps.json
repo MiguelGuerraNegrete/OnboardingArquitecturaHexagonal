@@ -9,8 +9,8 @@
       "AppTransaction.Infraestructure.API/1.0.0": {
         "dependencies": {
           "AppTransaction.Aplication": "1.0.0",
-          "AppTransaction.Dominio": "1.0.0",
-          "AppTransaction.Infraestruture.Datos": "1.0.0",
+          "AppTransaction.Domain": "1.0.0",
+          "AppTransaction.Infraestruture": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.13",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -714,26 +714,26 @@
       },
       "AppTransaction.Aplication/1.0.0": {
         "dependencies": {
-          "AppTransaction.Dominio": "1.0.0"
+          "AppTransaction.Domain": "1.0.0"
         },
         "runtime": {
           "AppTransaction.Aplication.dll": {}
         }
       },
-      "AppTransaction.Dominio/1.0.0": {
+      "AppTransaction.Domain/1.0.0": {
         "runtime": {
-          "AppTransaction.Dominio.dll": {}
+          "AppTransaction.Domain.dll": {}
         }
       },
-      "AppTransaction.Infraestruture.Datos/1.0.0": {
+      "AppTransaction.Infraestruture/1.0.0": {
         "dependencies": {
           "AppTransaction.Aplication": "1.0.0",
-          "AppTransaction.Dominio": "1.0.0",
+          "AppTransaction.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13"
         },
         "runtime": {
-          "AppTransaction.Infraestruture.Datos.dll": {}
+          "AppTransaction.Infraestruture.dll": {}
         }
       }
     }
@@ -1246,12 +1246,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AppTransaction.Dominio/1.0.0": {
+    "AppTransaction.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "AppTransaction.Infraestruture.Datos/1.0.0": {
+    "AppTransaction.Infraestruture/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

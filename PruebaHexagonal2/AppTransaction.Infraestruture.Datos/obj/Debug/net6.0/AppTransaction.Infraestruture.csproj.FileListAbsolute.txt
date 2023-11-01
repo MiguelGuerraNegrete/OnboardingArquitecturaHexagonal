@@ -1,6 +1,3 @@
-C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.deps.json
-C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.runtimeconfig.json
-C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.exe
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Aplication.deps.json
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Aplication.runtimeconfig.json
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Aplication.exe
@@ -65,8 +62,6 @@ C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\Ap
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Aplication.dll
-C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.dll
-C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.pdb
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Aplication.pdb
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\obj\Debug\net6.0\AppTransaction.Infraestruture.csproj.AssemblyReference.cache
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\obj\Debug\net6.0\AppTransaction.Infraestruture.GeneratedMSBuildEditorConfig.editorconfig
@@ -79,3 +74,8 @@ C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\Ap
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\obj\Debug\net6.0\AppTransaction.Infraestruture.pdb
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\obj\Debug\net6.0\AppTransaction.Infraestruture.genruntimeconfig.cache
 C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\obj\Debug\net6.0\ref\AppTransaction.Infraestruture.dll
+C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.deps.json
+C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.runtimeconfig.json
+C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.exe
+C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.dll
+C:\Users\acer\Desktop\Cursos\OnboardingArquitecturaHexagonal\PruebaHexagonal2\AppTransaction.Infraestruture.Datos\bin\Debug\net6.0\AppTransaction.Domain.pdb

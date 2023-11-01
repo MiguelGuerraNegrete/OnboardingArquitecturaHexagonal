@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zFnntJ2z28DrgP6dIp+bE0AhLsV6/9wOorMMJ+KuYVf2oNByLLAsYE9uS53Dkyv58nxNiE7T/fJWGWkt5Aw7aw==",
+  "dgSpecHash": "PbcWvHMytWTPdnHf8Vh7ZKQalwYVR/B//e24PaCDbLhNFZEC7sKNQxIDnuRNYe2o+Guw2yzh0lPz3FT2dcXuZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Infraestructure.API\\AppTransaction.Infraestructure.API.csproj",
   "expectedPackageFiles": [

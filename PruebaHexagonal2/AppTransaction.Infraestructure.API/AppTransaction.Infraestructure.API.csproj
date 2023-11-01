@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppTransaction.Dominio\AppTransaction.Dominio.csproj" />
+    <ProjectReference Include="..\AppTransaction.Dominio\AppTransaction.Domain.csproj" />
     <ProjectReference Include="..\AppTransaction.Infraestruture.Datos\AppTransaction.Infraestruture.csproj" />
     <ProjectReference Include="..\AppVenta.Aplication\AppTransaction.Aplication.csproj" />
   </ItemGroup>

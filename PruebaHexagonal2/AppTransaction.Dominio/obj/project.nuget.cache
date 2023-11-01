@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G/vtwMy2OyzKEaKr4IpBdtkj7dV95Oim0Ktc0UbcO/ZfjY8RyMwEru86n/cSsidPChuvCn/TOHdU8V5zHsUzuA==",
+  "dgSpecHash": "/Ek16N28B4LsE7e+E0hXPbmvQVfLsRM8J4pm/p4ksoTWDgY77fum54+Euv7y76/CzV1gFtoAYJ9xEiMbuCS8SQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",

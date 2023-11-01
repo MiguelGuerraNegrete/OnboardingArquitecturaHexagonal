@@ -964,9 +964,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj",
-      "projectName": "AppTransaction.Dominio",
-      "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj",
+      "projectName": "AppTransaction.Domain",
+      "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\obj\\",
       "projectStyle": "PackageReference",

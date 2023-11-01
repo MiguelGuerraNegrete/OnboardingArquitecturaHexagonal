@@ -376,14 +376,14 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "AppTransaction.Dominio/1.0.0": {
+      "AppTransaction.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/AppTransaction.Dominio.dll": {}
+          "bin/placeholder/AppTransaction.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AppTransaction.Dominio.dll": {}
+          "bin/placeholder/AppTransaction.Domain.dll": {}
         }
       }
     }
@@ -962,15 +962,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "AppTransaction.Dominio/1.0.0": {
+    "AppTransaction.Domain/1.0.0": {
       "type": "project",
-      "path": "../AppTransaction.Dominio/AppTransaction.Dominio.csproj",
-      "msbuildProject": "../AppTransaction.Dominio/AppTransaction.Dominio.csproj"
+      "path": "../AppTransaction.Dominio/AppTransaction.Domain.csproj",
+      "msbuildProject": "../AppTransaction.Dominio/AppTransaction.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AppTransaction.Dominio >= 1.0.0",
+      "AppTransaction.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.13"
     ]
   },
@@ -1001,8 +1001,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj": {
-              "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Dominio.csproj"
+            "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj": {
+              "projectPath": "C:\\Users\\acer\\Desktop\\Cursos\\OnboardingArquitecturaHexagonal\\PruebaHexagonal2\\AppTransaction.Dominio\\AppTransaction.Domain.csproj"
             }
           }
         }
