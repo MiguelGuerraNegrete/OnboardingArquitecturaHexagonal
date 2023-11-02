@@ -1,8 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AppTransaction.Dominio"
+    "\\AppTransaction.Domain"
   ],
-  "SelectedNode": "\\AppTransaction.Dominio\\AppTransaction.sln",
   "PreviewInSolutionExplorer": false
 }

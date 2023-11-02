@@ -8,11 +8,14 @@
     ".NETCoreApp,Version=v6.0": {
       "AppTransaction.Infraestructure.API/1.0.0": {
         "dependencies": {
-          "AppTransaction.Aplication": "1.0.0",
+          "AppTransaction.Application": "1.0.0",
           "AppTransaction.Domain": "1.0.0",
-          "AppTransaction.Infraestruture": "1.0.0",
+          "AppTransaction.Infraestructure": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.Design": "7.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -213,6 +216,11 @@
             "assemblyVersion": "7.0.13.0",
             "fileVersion": "7.0.1323.51806"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/7.0.13": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "7.0.13"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -712,28 +720,34 @@
           }
         }
       },
-      "AppTransaction.Aplication/1.0.0": {
+      "AppTransaction.Application/1.0.0": {
         "dependencies": {
-          "AppTransaction.Domain": "1.0.0"
-        },
-        "runtime": {
-          "AppTransaction.Aplication.dll": {}
-        }
-      },
-      "AppTransaction.Domain/1.0.0": {
-        "runtime": {
-          "AppTransaction.Domain.dll": {}
-        }
-      },
-      "AppTransaction.Infraestruture/1.0.0": {
-        "dependencies": {
-          "AppTransaction.Aplication": "1.0.0",
           "AppTransaction.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13"
         },
         "runtime": {
-          "AppTransaction.Infraestruture.dll": {}
+          "AppTransaction.Application.dll": {}
+        }
+      },
+      "AppTransaction.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13"
+        },
+        "runtime": {
+          "AppTransaction.Domain.dll": {}
+        }
+      },
+      "AppTransaction.Infraestructure/1.0.0": {
+        "dependencies": {
+          "AppTransaction.Application": "1.0.0",
+          "AppTransaction.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13"
+        },
+        "runtime": {
+          "AppTransaction.Infraestructure.dll": {}
         }
       }
     }
@@ -862,6 +876,13 @@
       "sha512": "sha512-86lPGt6HpkUgL+FHnu1nPmBmwvuBRqtYZPgj+sIhsF2OqRWOeQiXUjy3pspNgl1CK5goK5icjBAIlrl3LkMFuw==",
       "path": "microsoft.entityframeworkcore.sqlserver/7.0.13",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.13.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/7.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z2edRVeoCqvWdNNHHoqbiNhRBetXfh/GBAga6bXM0mmRWzYZ0Y8F+jUFWF/8BUdnbv/8RAafIkWLVMT0jdxMLQ==",
+      "path": "microsoft.entityframeworkcore.tools/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.tools.7.0.13.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
@@ -1241,7 +1262,7 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "AppTransaction.Aplication/1.0.0": {
+    "AppTransaction.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1251,7 +1272,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AppTransaction.Infraestruture/1.0.0": {
+    "AppTransaction.Infraestructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
