@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AppTransaction.Domain.Interfaces
+﻿namespace AppTransaction.Domain.Interfaces
 {
-    public interface IGet<Entity, EntityId>
+    public interface IGet<TEntity, TEntityId>
     {
-        List<Entity> Get();
+        List<TEntity> Get();
 
-        Entity GetById(EntityId entityId);
+        TEntity GetById(TEntityId entityId);
     }
 }

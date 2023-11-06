@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using AppTransaction.Aplication.Services;
 using AppTransaction.Domain;
-using AppTransaction.Aplication.Services;
-using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
 using AppTransaction.Infraestruture.Datos.Contexts;
+using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
+using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AppTransaction.Infraestructure.API.Controllers
 {
@@ -22,7 +20,6 @@ namespace AppTransaction.Infraestructure.API.Controllers
 
         }
         
-        // GET: api/<ClientController>
         [HttpGet]
         public ActionResult<List<Client>> Get()
         {
@@ -30,15 +27,13 @@ namespace AppTransaction.Infraestructure.API.Controllers
             return Ok(service.Get());
         }
 
-        // GET api/<ClientController>/5
-        [HttpGet("{id}")]
-        public ActionResult<Client> Get1(int id)
+        [HttpGet("{clientId}")]
+        public ActionResult<Client> GetByID(int clientId)
         {
             var service = CreateService();
-            return Ok(service.GetById(id));
+            return Ok(service.GetById(clientId));
         }
 
-        // POST api/<ClientController>
         [HttpPost]
         public IActionResult Post([FromBody] Client client)
         {
@@ -47,22 +42,20 @@ namespace AppTransaction.Infraestructure.API.Controllers
             return Ok("Added client");
         }
 
-        // PUT api/<ClientController>/5
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Client client)
+        [HttpPut("{clientId}")]
+        public ActionResult Put(int clientId, [FromBody] Client client)
         {
             var service = CreateService();
-            client.ClientId = id;
+            client.ClientId = clientId;
             service.Update(client);
             return Ok("Updated");
         }
 
-        // DELETE api/<ClientController>/5
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        [HttpDelete("{clientId}")]
+        public ActionResult Delete(int clientId)
         {
             var service = CreateService();
-            service.Delete(id);
+            service.Delete(clientId);
             return Ok("Deleted");
         }
     }

@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using AppTransaction.Aplication.Services;
 using AppTransaction.Domain;
-using AppTransaction.Aplication.Services;
-using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
 using AppTransaction.Infraestruture.Datos.Contexts;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AppTransaction.Infraestructure.API.Controllers
 {
@@ -23,8 +20,6 @@ namespace AppTransaction.Infraestructure.API.Controllers
 
         }
 
-
-        // GET: api/<ProductController>
         [HttpGet]
         public ActionResult<List<Product>> Get()
         {
@@ -32,15 +27,13 @@ namespace AppTransaction.Infraestructure.API.Controllers
             return Ok(service.Get());
         }
 
-        // GET api/<ProductController>/5
-        [HttpGet("{id}")]
-        public ActionResult<Product> Get1(int id)
+        [HttpGet("{productId}")]
+        public ActionResult<Product> GetByID(int productId)
         {
             var service = CreateService();
-            return Ok(service.GetById(id));
+            return Ok(service.GetById(productId));
         }
 
-        // POST api/<ProductController>
         [HttpPost]
         public ActionResult Post([FromBody] Product product)
         {
@@ -49,22 +42,20 @@ namespace AppTransaction.Infraestructure.API.Controllers
             return Ok("Added product");
         }
 
-        // PUT api/<ProductController>/5
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Product product)
+        [HttpPut("{productId}")]
+        public ActionResult Put(int productId, [FromBody] Product product)
         {
             var service = CreateService();
-            product.ProductId = id;
+            product.ProductId = productId;
             service.Update(product);
             return Ok("Updated");
         }
 
-        // DELETE api/<ProductController>/5
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        [HttpDelete("{productId}")]
+        public ActionResult Delete(int productId)
         {
             var service = CreateService();
-            service.Delete(id);
+            service.Delete(productId);
             return Ok("Deleted");
         }
     }
