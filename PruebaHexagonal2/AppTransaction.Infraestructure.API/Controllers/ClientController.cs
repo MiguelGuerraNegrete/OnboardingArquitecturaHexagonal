@@ -27,7 +27,7 @@ namespace AppTransaction.Infraestructure.API.Controllers
         public ActionResult<List<Client>> Get()
         {
             var service = CreateService();
-            return Ok(service);
+            return Ok(service.Get());
         }
 
         // GET api/<ClientController>/5

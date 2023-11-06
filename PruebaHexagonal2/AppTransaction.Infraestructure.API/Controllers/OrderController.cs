@@ -29,7 +29,7 @@ namespace AppTransaction.Infraestructure.API.Controllers
         public ActionResult<List<Order>> Get()
         {
             var service = CreateService();
-            return Ok(service);
+            return Ok(service.Get());
         }
 
         // GET api/<OrderController>/5
