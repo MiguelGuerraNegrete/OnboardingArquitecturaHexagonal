@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using AppTransaction.Aplication.Services;
 using AppTransaction.Domain;
-using AppTransaction.Aplication.Services;
-using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
 using AppTransaction.Infraestruture.Datos.Contexts;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AppTransaction.Infraestructure.API.Controllers
 {
@@ -19,12 +16,10 @@ namespace AppTransaction.Infraestructure.API.Controllers
             OrderRepository repoOrder = new OrderRepository(db);
             ClientRepository repoClient = new ClientRepository(db);
             ProductRepository repoProduct = new ProductRepository(db);
-            OrderService service = new OrderService(repoOrder,repoClient,repoProduct);
+            OrderService service = new OrderService(repoOrder);
             return service;
         }
 
-
-        // GET: api/<OrderController>
         [HttpGet]
         public ActionResult<List<Order>> Get()
         {
@@ -32,15 +27,13 @@ namespace AppTransaction.Infraestructure.API.Controllers
             return Ok(service.Get());
         }
 
-        // GET api/<OrderController>/5
-        [HttpGet("{id}")]
-        public ActionResult<Order> Get1(long id)
+        [HttpGet("{orderId}")]
+        public ActionResult<Order> Get1(long orderId)
         {
             var service = CreateService();
-            return Ok(service.GetById(id));
+            return Ok(service.GetById(orderId));
         }
 
-        // POST api/<OrderController>
         [HttpPost]
         public ActionResult Post([FromBody] Order order)
         {
@@ -49,12 +42,11 @@ namespace AppTransaction.Infraestructure.API.Controllers
             return Ok("Added order");
         }
 
-        // DELETE api/<OrderController>/5
-        [HttpDelete("{id}")]
-        public ActionResult Delete(long id)
+        [HttpDelete("{orderId}")]
+        public ActionResult Delete(long orderId)
         {
             var service = CreateService();
-            service.Cancel(id);
+            service.Cancel(orderId);
             return Ok("Deleted");
         }
     }

@@ -1,31 +1,26 @@
 ﻿using AppTransaction.Aplication.Interfaces;
 using AppTransaction.Domain;
 using AppTransaction.Domain.Interfaces.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppTransaction.Aplication.Services
 {
-    public class ProductService : IServiceBaseProduct<Product, int>
+    public class ProductService : IProductService<Product, int>
     {
-        private readonly IRepositoriBase<Product, int> repopProduct;
+        private readonly IRepositoryBase<Product, int> _repositoryProduct;
 
-        public ProductService(IRepositoriBase<Product, int> _repoProduct)
+        public ProductService(IRepositoryBase<Product, int> repositoryProduct)
         {
-            repopProduct = _repoProduct;
+            _repositoryProduct = repositoryProduct;
         }
 
         public List<Product> Get()
         {
-            return repopProduct.Get();
+            return _repositoryProduct.Get();
         }
 
         public Product GetById(int entityId)
         {
-            return repopProduct.GetById(entityId);
+            return _repositoryProduct.GetById(entityId);
         }
 
         public Product Post(Product entity)
@@ -34,8 +29,8 @@ namespace AppTransaction.Aplication.Services
             {
                 throw new ArgumentNullException("Product is required");
             }
-            var newProduct = repopProduct.Post(entity);
-            repopProduct.SaveAllChanges();
+            var newProduct = _repositoryProduct.Post(entity);
+            _repositoryProduct.SaveAllChanges();
             return newProduct;
         }
 
@@ -45,14 +40,14 @@ namespace AppTransaction.Aplication.Services
             {
                 throw new ArgumentNullException("Product is required");
             }
-            repopProduct.Update(entity);
-            repopProduct.SaveAllChanges();
+            _repositoryProduct.Update(entity);
+            _repositoryProduct.SaveAllChanges();
         }
 
         public void Delete(int entityId)
         {
-            repopProduct.Delete(entityId);
-            repopProduct.SaveAllChanges();
+            _repositoryProduct.Delete(entityId);
+            _repositoryProduct.SaveAllChanges();
         }
     }
 }
