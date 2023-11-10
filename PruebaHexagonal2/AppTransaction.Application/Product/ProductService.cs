@@ -6,26 +6,27 @@ namespace AppTransaction.Aplication.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IProductRepository _repositoryProduct;
+        private readonly IProductRepository _ProductRepository;
 
         public ProductService(IProductRepository repositoryProduct)
         {
-            _repositoryProduct = repositoryProduct;
+            _ProductRepository = repositoryProduct;
         }
 
-        public async Task ExecuteAsync()
+        public async Task<IEnumerable<Product>> GetAsync()
         {
+            return await _ProductRepository.GetAsync();
+        }
 
-            var NewProductId = Guid.NewGuid();
+        public async Task<Product> GetByIdAsync(Guid productId)
+        {
+            return await _ProductRepository.GetByAsync(productId);
+        }
 
-            var product = new Product
-            {
-                ProductId = NewProductId,
-                ProductCode = 10,
-                ProductName = "Chair",
-                ProductValue = 100
-            };
-            await _repositoryProduct.Save(product);
+        public Task SaveAsync(Product product)
+        {
+            var newProduct = _ProductRepository.SaveAsync(product);
+            return newProduct;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 using AppTransaction.Domain.Interfaces.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 {
@@ -13,12 +13,14 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
             _context = dbcontext;
         }
 
-        public async Task<Product> GetAsync(Guid id)
+        public async Task<IEnumerable<Product>> GetAsync() => await _context.Products.ToListAsync();
+
+        public async Task<Product> GetByAsync(Guid productId)
         {
-            return await _context.Products.FindAsync(id);
+            return await _context.Products.FindAsync(productId);
         }
 
-        public async Task Save(Product product)
+        public async Task SaveAsync(Product product)
         {
             _context.Products.Add(product);
             await _context.SaveChangesAsync();

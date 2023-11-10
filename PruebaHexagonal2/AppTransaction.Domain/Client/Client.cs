@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace AppTransaction.Domain
+﻿namespace AppTransaction.Domain
 {
     public class Client
     {
@@ -8,6 +6,5 @@ namespace AppTransaction.Domain
         public string Identification { get; set; }
         public string Name { get; set; }
         public double AvailableBalance { get; set; }
-        
     }
 }

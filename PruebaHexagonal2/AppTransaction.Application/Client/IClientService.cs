@@ -4,9 +4,8 @@ namespace AppTransaction.Aplication.Interfaces
 {
     public interface IClientService
     {
-        //Task ExecuteAsync();
         Task<IEnumerable<Client>> GetAsync();
-        Task<Client> GetByIdAsync(Guid id);
-        Task Save(Client client);
+        Task<Client> GetByIdAsync(Guid clientId);
+        Task SaveAsync(Client client);
     }
 }

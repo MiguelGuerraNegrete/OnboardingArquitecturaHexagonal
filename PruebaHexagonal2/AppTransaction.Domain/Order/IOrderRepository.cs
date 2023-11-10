@@ -2,7 +2,8 @@
 {
     public interface IOrderRepository
     {
-        Task<Order> GetAsync(Guid id);
-        Task Save(Order order);
+        Task<IEnumerable<Order>> GetAsync();
+        Task<Order> GetByAsync(Guid orderId);
+        Task SaveAsync(Order order);
     }
 }

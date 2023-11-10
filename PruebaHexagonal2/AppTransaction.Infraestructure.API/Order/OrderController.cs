@@ -1,9 +1,5 @@
 ﻿using AppTransaction.Aplication.Interfaces;
-using AppTransaction.Aplication.Services;
 using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces.Repository;
-using AppTransaction.Infraestruture.Datos.Contexts;
-using AppTransaction.Infraestruture.Datos.Contexts.Repositorys;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppTransaction.Infraestructure.API.Controllers
@@ -18,18 +14,25 @@ namespace AppTransaction.Infraestructure.API.Controllers
         {
             _orderService = orderService;  
         }
-        
-        [HttpGet("{orderId}")]
-        public ActionResult<Order> GetByID( )
+
+        [HttpGet]
+        public async Task<IActionResult> GetAsync()
         {
-            var service = _orderService.ExecuteAsync();
+            var allOrdes = await _orderService.GetAsync();
+            return Ok(allOrdes);
+        }
+
+        [HttpGet("{orderId}")]
+        public ActionResult<Order> GetByID(Guid orderId )
+        {
+            var service = _orderService.GetByAsync(orderId);
             return Ok(service);
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Order order)
+        public async Task< IActionResult> Post([FromBody] Order order)
         {
-            _orderService.ExecuteAsync();
+            await _orderService.SaveAsync(order);
             return Ok("Added order");
         }
     }

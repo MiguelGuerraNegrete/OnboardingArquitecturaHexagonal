@@ -1,10 +1,11 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 
 namespace AppTransaction.Aplication.Interfaces
 {
     public interface IProductService
     {
-        Task ExecuteAsync();
+        Task<IEnumerable<Product>> GetAsync();
+        Task<Product> GetByIdAsync(Guid productId);
+        Task SaveAsync(Product product);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AppTransaction.Domain;
 using AppTransaction.Domain.Interfaces.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 {
@@ -12,12 +13,14 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
             _context = dbcontext;
         }
 
-        public async Task<Order> GetAsync(Guid id)
+        public async Task<IEnumerable<Order>> GetAsync() => await _context.Orders.ToListAsync();
+
+        public async Task<Order> GetByAsync(Guid id)
         {
             return await _context.Orders.FindAsync(id);
         }
 
-        public async Task Save(Order order)
+        public async Task SaveAsync(Order order)
         {
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();

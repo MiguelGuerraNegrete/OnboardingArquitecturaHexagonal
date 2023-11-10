@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace AppTransaction.Domain
+﻿namespace AppTransaction.Domain
 {
     public class Order
     {
@@ -8,6 +6,5 @@ namespace AppTransaction.Domain
         public int Units { get; set; }
         public Double ProductValue { get; set; }
         public Double Total { get; set; }
-    }   
-        
+    }        
 }

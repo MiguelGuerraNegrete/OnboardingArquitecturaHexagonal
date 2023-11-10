@@ -25,7 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AppTransaction.Application\AppTransaction.Application.csproj" />
     <ProjectReference Include="..\AppTransaction.Domain\AppTransaction.Domain.csproj" />
-    <ProjectReference Include="..\AppTransaction.Infraestructure\AppTransaction.Infraestructure.csproj" />
+    <ProjectReference Include="..\AppTransaction.Infraestructure\AppTransaction.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

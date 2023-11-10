@@ -13,19 +13,20 @@ namespace AppTransaction.Aplication.Services
             _repositoryOrder = repositoryOrder;
         }
 
-        public async Task ExecuteAsync()
+        public async Task<IEnumerable<Order>> GetAsync()
         {
-
-            var NewOrderId = Guid.NewGuid();
-
-            var order = new Order
-            {
-                OrderId = NewOrderId,
-                Units = 10,
-                ProductValue = 10,
-                Total = 100
-            };
-            await _repositoryOrder.Save(order);
+            return await _repositoryOrder.GetAsync();
         }
-    }
+
+        public async Task<Order> GetByAsync(Guid id)
+        {
+            return await _repositoryOrder.GetByAsync(id);
+        }
+
+        public Task SaveAsync(Order order)
+        {
+            var clienResult =  _repositoryOrder.SaveAsync(order);
+            return clienResult;
+        }
+    }   
 }

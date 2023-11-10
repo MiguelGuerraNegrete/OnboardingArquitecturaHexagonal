@@ -2,7 +2,8 @@
 {
     public interface IProductRepository
     {
-        Task<Product> GetAsync(Guid id);
-        Task Save(Product product);
+        Task<IEnumerable<Product>> GetAsync();
+        Task<Product> GetByAsync(Guid productId);
+        Task SaveAsync(Product product);
     }
 }

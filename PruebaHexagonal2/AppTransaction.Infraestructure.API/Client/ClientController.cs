@@ -33,7 +33,7 @@ namespace AppTransaction.Infraestructure.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Client client)
         {
-            await _clientService.Save(client);
+            await _clientService.SaveAsync(client);
             return Ok("Added client");
         }
     }

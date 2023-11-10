@@ -1,5 +1,4 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 using AppTransaction.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +20,7 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
             return await _context.Clients.FindAsync(id);
         }
 
-        public async Task Save(Client client)
+        public async Task SaveAsync(Client client)
         {
             _context.Clients.Add(client);
             await _context.SaveChangesAsync();
