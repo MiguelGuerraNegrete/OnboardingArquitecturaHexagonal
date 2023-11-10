@@ -4,50 +4,28 @@ using AppTransaction.Domain.Interfaces.Repository;
 
 namespace AppTransaction.Aplication.Services
 {
-    public class ProductService : IProductService<Product, int>
+    public class ProductService : IProductService
     {
-        private readonly IRepositoryBase<Product, int> _repositoryProduct;
+        private readonly IProductRepository _repositoryProduct;
 
-        public ProductService(IRepositoryBase<Product, int> repositoryProduct)
+        public ProductService(IProductRepository repositoryProduct)
         {
             _repositoryProduct = repositoryProduct;
         }
 
-        public List<Product> Get()
+        public async Task ExecuteAsync()
         {
-            return _repositoryProduct.Get();
-        }
 
-        public Product GetById(int entityId)
-        {
-            return _repositoryProduct.GetById(entityId);
-        }
+            var NewProductId = Guid.NewGuid();
 
-        public Product Post(Product entity)
-        {
-            if (entity == null)
+            var product = new Product
             {
-                throw new ArgumentNullException("Product is required");
-            }
-            var newProduct = _repositoryProduct.Post(entity);
-            _repositoryProduct.SaveAllChanges();
-            return newProduct;
-        }
-
-        public void Update(Product entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("Product is required");
-            }
-            _repositoryProduct.Update(entity);
-            _repositoryProduct.SaveAllChanges();
-        }
-
-        public void Delete(int entityId)
-        {
-            _repositoryProduct.Delete(entityId);
-            _repositoryProduct.SaveAllChanges();
+                ProductId = NewProductId,
+                ProductCode = 10,
+                ProductName = "Chair",
+                ProductValue = 100
+            };
+            await _repositoryProduct.Save(product);
         }
     }
 }

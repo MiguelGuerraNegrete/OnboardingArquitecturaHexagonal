@@ -3,7 +3,7 @@ using AppTransaction.Domain.Interfaces.Repository;
 
 namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 {
-    public class OrderRepository : IRepositoryOrder<Order, long>
+    public class OrderRepository : IOrderRepository
     {
         private readonly TransactionContext _context;
 
@@ -12,40 +12,15 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
             _context = dbcontext;
         }
 
-        public List<Order> Get()
+        public async Task<Order> GetAsync(Guid id)
         {
-            return _context.Orders.ToList();
+            return await _context.Orders.FindAsync(id);
         }
 
-        public Order GetById(long entityId)
+        public async Task Save(Order order)
         {
-            var selecOrder = _context.Orders.Where(c => c.OrderId == entityId).FirstOrDefault();
-            return selecOrder;
-        }
-
-        public Order Post(Order entity)
-        {
-            entity.OrderId = int.MaxValue;
-            _context.Orders.Add(entity);
-            return entity;
-        }
-
-        public void Delete(long entityId)
-        {
-            var orderSelec = _context.Orders.Where(c => c.OrderId == entityId).FirstOrDefault();
-            
-            if(orderSelec != null) 
-            {
-                throw new InvalidOperationException("Order not exist");
-            }
-
-            orderSelec.Canceled = true;
-            _context.Entry(orderSelec).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-        }
-
-        public void SaveAllChanges()
-        {
-            _context.SaveChanges();
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
         }
     }
 }

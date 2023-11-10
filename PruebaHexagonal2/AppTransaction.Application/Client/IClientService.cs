@@ -1,10 +1,12 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 
 namespace AppTransaction.Aplication.Interfaces
 {
-    public interface IClientService<TEntity, TEntityId> : IPost<TEntity>, IUpdate<TEntity>, IDelete<TEntityId>, IGet<TEntity, TEntityId>
+    public interface IClientService
     {
-        Client Post(Client entity);
+        //Task ExecuteAsync();
+        Task<IEnumerable<Client>> GetAsync();
+        Task<Client> GetByIdAsync(Guid id);
+        Task Save(Client client);
     }
 }

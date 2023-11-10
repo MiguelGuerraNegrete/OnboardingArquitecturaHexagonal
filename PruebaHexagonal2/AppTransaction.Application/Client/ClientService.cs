@@ -4,50 +4,30 @@ using AppTransaction.Domain.Interfaces.Repository;
 
 namespace AppTransaction.Aplication.Services
 {
-    public class ClientService : IClientService<Client, int>
+    public class ClientService : IClientService
     {
-        private readonly IRepositoryBase<Client, int> _repositoryBaseClient; 
+        private readonly IClientRepository _clientRepository; 
 
-        public ClientService(IRepositoryBase<Client, int> repositoryBaseClient)
+        public ClientService(IClientRepository clientRepository)
         {
-            _repositoryBaseClient = repositoryBaseClient;
+            _clientRepository = clientRepository;
         }
 
-        public List<Client> Get()
+        
+        public async Task<IEnumerable<Client>> GetAsync()
         {
-           return _repositoryBaseClient.Get();
+            return await _clientRepository.GetAsync();
         }
 
-        public Client GetById(int entityId)
+        public async Task<Client> GetByIdAsync(Guid id)
         {
-            return _repositoryBaseClient.GetById(entityId);
+            return await _clientRepository.GetByIdAsync(id);
         }
 
-        public Client Post(Client entity)
+        public  Task Save(Client client)
         {
-            if (entity == null)
-            {         
-                throw new ArgumentNullException("Client is required");
-            }
-            var clienResult = _repositoryBaseClient.Post(entity);
-            _repositoryBaseClient.SaveAllChanges();
+            var clienResult = _clientRepository.Save(client);
             return clienResult;
-        }
-
-        public void Update(Client entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("Client is required");
-            }
-            _repositoryBaseClient.Update(entity);
-            _repositoryBaseClient.SaveAllChanges();
-        }
-
-        public void Delete(int entityId)
-        {
-            _repositoryBaseClient.Delete(entityId);
-            _repositoryBaseClient.SaveAllChanges();
         }
     }
 }

@@ -4,38 +4,28 @@ using AppTransaction.Domain.Interfaces.Repository;
 
 namespace AppTransaction.Aplication.Services
 {
-    public class OrderService : IOrderService<Order, long>
+    public class OrderService : IOrderService
     {
-        private readonly IRepositoryOrder<Order, long> _repositoryOrder;
+        private readonly IOrderRepository _repositoryOrder;
 
-        public OrderService(IRepositoryOrder<Order,long> repositoryOrder)
+        public OrderService(IOrderRepository repositoryOrder)
         {
             _repositoryOrder = repositoryOrder;
         }
 
-        public void Cancel(long entityId)
+        public async Task ExecuteAsync()
         {
-            _repositoryOrder.Delete( entityId );
-            _repositoryOrder.SaveAllChanges();
-        }
 
-        public List<Order> Get()
-        {
-            return _repositoryOrder.Get();
-        }
+            var NewOrderId = Guid.NewGuid();
 
-        public Order GetById(long entityId)
-        {
-            return _repositoryOrder.GetById(entityId);
-        }   
-
-        public Order Post(Order entity)
-        {
-            if (entity == null) throw new ArgumentNullException("Order is required");
-            
-            var newOrder = _repositoryOrder.Post(entity);
-            _repositoryOrder.SaveAllChanges();
-            return newOrder;
+            var order = new Order
+            {
+                OrderId = NewOrderId,
+                Units = 10,
+                ProductValue = 10,
+                Total = 100
+            };
+            await _repositoryOrder.Save(order);
         }
     }
 }
