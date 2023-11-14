@@ -16,23 +16,26 @@ namespace AppTransaction.Infraestructure.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAsync()
+        public async Task<IActionResult> GetAsync(CancellationToken cancellationToken)
         {
+            await Task.Delay(2000, cancellationToken);
             var allClients = await _productService.GetAsync();
             return Ok(allClients);
         }
 
         [HttpGet("{productId}")]
-        public ActionResult<Product> GetByID(Guid productId)
+        public async Task <IActionResult> GetByID(Guid productId, CancellationToken cancellationToken)
         {
-            var service = _productService.GetByIdAsync(productId);
-            return Ok(service);
+            await Task.Delay(2000, cancellationToken);
+            var ExpectedProduct = await _productService.GetByIdAsync(productId);
+            return Ok(ExpectedProduct);
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Product product)
+        public async Task<IActionResult> Post([FromBody] Product product, CancellationToken cancellationToken)
         {
-            _productService.SaveAsync(product);
+            await Task.Delay(2000, cancellationToken);
+            await _productService.SaveAsync(product);
             return Ok("Added product");
         }
     }

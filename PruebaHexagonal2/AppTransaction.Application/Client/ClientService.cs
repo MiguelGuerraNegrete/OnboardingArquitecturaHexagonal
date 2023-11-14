@@ -13,20 +13,13 @@ namespace AppTransaction.Aplication.Services
             _clientRepository = clientRepository;
         }
 
-        public async Task<IEnumerable<Client>> GetAsync()
-        {
-            return await _clientRepository.GetAsync();
-        }
+        public async Task<IEnumerable<Client>> GetAsync() => await _clientRepository.GetAsync();
 
-        public async Task<Client> GetByIdAsync(Guid clientId)
-        {
-            return await _clientRepository.GetByIdAsync(clientId);
-        }
+        public async Task<Client> GetByIdAsync(Guid clientId) => await _clientRepository.GetByIdAsync(clientId);
 
-        public Task SaveAsync(Client client)
+        public async Task SaveAsync(Client client)
         {
-            var clienResult = _clientRepository.SaveAsync(client);
-            return clienResult;
+            await _clientRepository.SaveAsync(client);   
         }
     }
 }

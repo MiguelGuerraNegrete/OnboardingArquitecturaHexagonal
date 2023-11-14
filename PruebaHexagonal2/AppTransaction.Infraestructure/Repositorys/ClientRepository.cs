@@ -15,14 +15,11 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 
         public async Task<IEnumerable<Client>> GetAsync() => await _context.Clients.ToListAsync();
 
-        public async Task<Client> GetByIdAsync(Guid id)
-        {
-            return await _context.Clients.FindAsync(id);
-        }
+        public async Task<Client> GetByIdAsync(Guid id) => await _context.Clients.FindAsync(id);
 
         public async Task SaveAsync(Client client)
         {
-            _context.Clients.Add(client);
+            await _context.Clients.AddAsync(client);
             await _context.SaveChangesAsync();
         }
     }
