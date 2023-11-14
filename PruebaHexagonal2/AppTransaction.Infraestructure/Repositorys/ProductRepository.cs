@@ -15,14 +15,11 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 
         public async Task<IEnumerable<Product>> GetAsync() => await _context.Products.ToListAsync();
 
-        public async Task<Product> GetByAsync(Guid productId)
-        {
-            return await _context.Products.FindAsync(productId);
-        }
+        public async Task<Product> GetByAsync(Guid productId) => await _context.Products.FindAsync(productId);
 
         public async Task SaveAsync(Product product)
         {
-            _context.Products.Add(product);
+            await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
         }
     }
