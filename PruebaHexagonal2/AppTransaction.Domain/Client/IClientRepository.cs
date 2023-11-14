@@ -1,8 +1,6 @@
-﻿using AppTransaction.Domain;
-
-namespace AppTransaction.Aplication.Interfaces
+﻿namespace AppTransaction.Domain.Interfaces.Repository
 {
-    public interface IClientService
+    public interface IClientRepository
     {
         Task<IEnumerable<Client>> GetAsync();
         Task<Client> GetByIdAsync(Guid clientId);

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AppTransaction.Infraestruture.Datos.Migrations
+namespace AppTransaction.Infraestructure.Migrations
 {
     [DbContext(typeof(TransactionContext))]
     partial class TransactionContextModelSnapshot : ModelSnapshot
@@ -22,13 +22,11 @@ namespace AppTransaction.Infraestruture.Datos.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AppTransaction.Dominio.Client", b =>
+            modelBuilder.Entity("AppTransaction.Domain.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<Guid>("ClientId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("AvailableBalance")
                         .HasColumnType("float");
@@ -46,22 +44,11 @@ namespace AppTransaction.Infraestruture.Datos.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("AppTransaction.Dominio.Order", b =>
+            modelBuilder.Entity("AppTransaction.Domain.Order", b =>
                 {
-                    b.Property<long>("OrderId")
+                    b.Property<Guid>("OrderId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("OrderId"));
-
-                    b.Property<bool>("Canceled")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("ProductValue")
                         .HasColumnType("float");
@@ -74,21 +61,14 @@ namespace AppTransaction.Infraestruture.Datos.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.HasIndex("ClientId");
-
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("AppTransaction.Dominio.Product", b =>
+            modelBuilder.Entity("AppTransaction.Domain.Product", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
-
-                    b.Property<long?>("OrderId")
-                        .HasColumnType("bigint");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ProductCode")
                         .HasColumnType("int");
@@ -102,35 +82,7 @@ namespace AppTransaction.Infraestruture.Datos.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("OrderId");
-
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("AppTransaction.Dominio.Order", b =>
-                {
-                    b.HasOne("AppTransaction.Dominio.Client", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AppTransaction.Dominio.Product", b =>
-                {
-                    b.HasOne("AppTransaction.Dominio.Order", null)
-                        .WithMany("Product")
-                        .HasForeignKey("OrderId");
-                });
-
-            modelBuilder.Entity("AppTransaction.Dominio.Client", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("AppTransaction.Dominio.Order", b =>
-                {
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

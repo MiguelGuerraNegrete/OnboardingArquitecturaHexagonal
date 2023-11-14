@@ -1,10 +1,11 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 
 namespace AppTransaction.Aplication.Interfaces
 {
-    public interface IProductService<TEntity, TEntityId> : IPost<TEntity>, IUpdate<TEntity>, IDelete<TEntityId>, IGet<TEntity, TEntityId>
+    public interface IProductService
     {
-        Product Post(Product entity);
+        Task<IEnumerable<Product>> GetAsync();
+        Task<Product> GetByIdAsync(Guid productId);
+        Task SaveAsync(Product product);
     }
 }

@@ -1,10 +1,10 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 using AppTransaction.Domain.Interfaces.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 {
-    public class ProductRepository : IRepositoryBase<Product, int>
+    public class ProductRepository : IProductRepository
     {
         private readonly TransactionContext _context;
 
@@ -13,49 +13,17 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
             _context = dbcontext;
         }
 
-        List<Product> IGet<Product, int>.Get()
+        public async Task<IEnumerable<Product>> GetAsync() => await _context.Products.ToListAsync();
+
+        public async Task<Product> GetByAsync(Guid productId)
         {
-            return _context.Products.ToList();
+            return await _context.Products.FindAsync(productId);
         }
 
-        Product IGet<Product, int>.GetById(int entityId)
+        public async Task SaveAsync(Product product)
         {
-            var selecProduct = _context.Products.Where(c => c.ProductId == entityId).FirstOrDefault();
-            return selecProduct;
-        }
-
-        Product IPost<Product>.Post(Product entity)
-        {
-            entity.ProductId = int.MaxValue;
-            _context.Products.Add(entity);
-            return entity;
-        }
-
-        void IUpdate<Product>.Update(Product entity)
-        {
-            var selecProduct = _context.Products.Where(c => c.ProductId == entity.ProductId).FirstOrDefault();
-            if (selecProduct != null)
-            {
-                selecProduct.ProductName = entity.ProductName;
-                selecProduct.ProductValue = entity.ProductValue;
-                selecProduct.ProductCode = entity.ProductCode;
-
-                _context.Entry(selecProduct).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            }
-        }
-
-        void IDelete<int>.Delete(int entityId)
-        {
-            var selecProduct = _context.Products.Where(c => c.ProductId == entityId).FirstOrDefault();
-            if (selecProduct != null)
-            {
-                _context.Products.Remove(selecProduct);
-            }
-        }
-
-        void ITransaction.SaveAllChanges()
-        {
-            _context.SaveChanges();
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
         }
     }
 }

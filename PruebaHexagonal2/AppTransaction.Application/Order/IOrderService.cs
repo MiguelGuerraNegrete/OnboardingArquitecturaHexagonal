@@ -1,9 +1,11 @@
-﻿using AppTransaction.Domain.Interfaces;
+﻿using AppTransaction.Domain;
 
 namespace AppTransaction.Aplication.Interfaces
 {
-    public interface IOrderService<TEntity, TEntityId> : IPost<TEntity>, IGet<TEntity, TEntityId>
+    public interface IOrderService
     {
-        void Cancel(TEntityId entityId);
+        Task<IEnumerable<Order>> GetAsync();
+        Task<Order> GetByAsync(Guid id);
+        Task SaveAsync(Order order);
     }
 }

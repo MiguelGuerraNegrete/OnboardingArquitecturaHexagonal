@@ -4,50 +4,29 @@ using AppTransaction.Domain.Interfaces.Repository;
 
 namespace AppTransaction.Aplication.Services
 {
-    public class ProductService : IProductService<Product, int>
+    public class ProductService : IProductService
     {
-        private readonly IRepositoryBase<Product, int> _repositoryProduct;
+        private readonly IProductRepository _ProductRepository;
 
-        public ProductService(IRepositoryBase<Product, int> repositoryProduct)
+        public ProductService(IProductRepository repositoryProduct)
         {
-            _repositoryProduct = repositoryProduct;
+            _ProductRepository = repositoryProduct;
         }
 
-        public List<Product> Get()
+        public async Task<IEnumerable<Product>> GetAsync()
         {
-            return _repositoryProduct.Get();
+            return await _ProductRepository.GetAsync();
         }
 
-        public Product GetById(int entityId)
+        public async Task<Product> GetByIdAsync(Guid productId)
         {
-            return _repositoryProduct.GetById(entityId);
+            return await _ProductRepository.GetByAsync(productId);
         }
 
-        public Product Post(Product entity)
+        public Task SaveAsync(Product product)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("Product is required");
-            }
-            var newProduct = _repositoryProduct.Post(entity);
-            _repositoryProduct.SaveAllChanges();
+            var newProduct = _ProductRepository.SaveAsync(product);
             return newProduct;
-        }
-
-        public void Update(Product entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("Product is required");
-            }
-            _repositoryProduct.Update(entity);
-            _repositoryProduct.SaveAllChanges();
-        }
-
-        public void Delete(int entityId)
-        {
-            _repositoryProduct.Delete(entityId);
-            _repositoryProduct.SaveAllChanges();
         }
     }
 }

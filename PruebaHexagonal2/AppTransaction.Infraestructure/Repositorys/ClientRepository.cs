@@ -1,10 +1,10 @@
 ﻿using AppTransaction.Domain;
-using AppTransaction.Domain.Interfaces;
 using AppTransaction.Domain.Interfaces.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
 {
-    public class ClientRepository : IRepositoryBase<Client, int>
+    public class ClientRepository : IClientRepository
     {
         private readonly TransactionContext _context;
 
@@ -13,48 +13,17 @@ namespace AppTransaction.Infraestruture.Datos.Contexts.Repositorys
             _context = dbcontext;
         }
 
-        List<Client> IGet<Client, int>.Get()
+        public async Task<IEnumerable<Client>> GetAsync() => await _context.Clients.ToListAsync();
+
+        public async Task<Client> GetByIdAsync(Guid id)
         {
-            return _context.Clients.ToList();
+            return await _context.Clients.FindAsync(id);
         }
 
-        Client IGet<Client, int>.GetById(int entityId)
+        public async Task SaveAsync(Client client)
         {
-            var selecClient = _context.Clients.Where(c => c.ClientId == entityId).FirstOrDefault();
-            return selecClient;
-        }
-
-        Client IPost<Client>.Post(Client entity)
-        {
-            _context.Clients.Add(entity);
-            return entity;
-        }
-
-        void IUpdate<Client>.Update(Client entity)
-        {
-            var selecClient = _context.Clients.Where(c => c.ClientId == entity.ClientId).FirstOrDefault();
-            if (selecClient != null)
-            {
-                selecClient.Identification = entity.Identification;
-                selecClient.Name = entity.Name;
-                selecClient.AvailableBalance = entity.AvailableBalance;
-
-                _context.Entry(selecClient).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            }
-        }
-
-        void IDelete<int>.Delete(int entityId)
-        {
-            var selecClient = _context.Clients.Where(c => c.ClientId == entityId).FirstOrDefault();
-            if (selecClient != null)
-            {
-                _context.Clients.Remove(selecClient);
-            }
-        }
-
-        void ITransaction.SaveAllChanges()
-        {
-            _context.SaveChanges();
+            _context.Clients.Add(client);
+            await _context.SaveChangesAsync();
         }
     }
 }
